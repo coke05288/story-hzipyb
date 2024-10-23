@@ -1,4 +1,0 @@
-apiVersion: v2
-name: eureka-service
-description: Eureka service for service discovery
-version: 1.0.0

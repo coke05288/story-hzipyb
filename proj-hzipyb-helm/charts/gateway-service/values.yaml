@@ -1,4 +1,0 @@
-eureka:
-  serviceUrl: http://eureka-service:8761/eureka/
-image: nemomong/gateway-service:latest
-port: 8080

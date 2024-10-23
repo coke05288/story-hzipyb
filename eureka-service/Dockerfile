@@ -10,8 +10,8 @@ COPY ../gradle gradle/
 COPY ../build.gradle .
 COPY ../settings.gradle .
 
-# Gradle 캐시를 활용하여 의존성 설치
-RUN ./gradlew build -x test --stacktrace --no-daemon || return 0
+
+RUN ./gradlew clean build -x test --stacktrace --no-daemon -Dspring.profiles.active=prod || return 0
 
 # 프로젝트 소스 복사
 COPY eureka-service/ eureka-service/
@@ -29,4 +29,5 @@ WORKDIR /app
 COPY --from=build /app/eureka-service/build/libs/*.jar app.jar
 
 # 컨테이너 실행 시 애플리케이션 실행
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENV SPRING_PROFILE="prod"
+ENTRYPOINT ["java", "-Dspring.profiles.active=${SPRING_PROFILE}", "-jar", "app.jar"]

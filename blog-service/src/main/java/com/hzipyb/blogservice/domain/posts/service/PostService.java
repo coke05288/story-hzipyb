@@ -1,5 +1,8 @@
-package com.hzipyb.blogservice;
+package com.hzipyb.blogservice.domain.posts.service;
 
+import com.hzipyb.blogservice.DataNotFoundException;
+import com.hzipyb.blogservice.domain.posts.entity.Post;
+import com.hzipyb.blogservice.domain.posts.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,12 +18,7 @@ public class PostService {
         return postRepository.findAll();
     }
 
-    public Post getPostById(Long id) {
-        Optional<Post> post = this.postRepository.findById(id);
-        if (post.isPresent()) {
-            return post.get();
-        } else {
-            throw new DataNotFoundException("post not found");
-        }
+    public Optional<Post> getPostById(Long id) {
+        return postRepository.findById(id);
     }
 }

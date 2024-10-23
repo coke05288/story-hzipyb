@@ -1,11 +1,9 @@
-server.port: 8761
-
+server.port: 8000
 spring.application.name: eureka-service
 
 eureka:
   instance:
-    hostname: eureka-service
-    prefer-ip-address: true
+    hostname: localhost
     registry:
       default-open-for-traffic-count: 1
   client:
@@ -16,4 +14,5 @@ eureka:
     region: default
 
   server:
-    enable-self-preservation: false
+    enable-self-preservation: true
+    renewal-percent-threshold: 0
