@@ -1,0 +1,4 @@
+apiVersion: v2
+name: gateway-service
+description: Gateway service for service routing
+version: 1.0.0

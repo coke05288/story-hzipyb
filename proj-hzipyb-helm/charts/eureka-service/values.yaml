@@ -1,0 +1,2 @@
+image: nemomong/eureka-server:latest
+port: 8761

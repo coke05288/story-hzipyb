@@ -1,0 +1,23 @@
+global:
+  imagePullPolicy: IfNotPresent
+  replicas: 1
+  namespace: msa
+
+eureka-service:
+  image: nemomong/eureka-server:latest
+  port: 8761
+
+gateway-service:
+  image: nemomong/gateway-service:latest
+  port: 8080
+
+blog-service:
+  image: nemomong/blog-service:latest
+  port: 8081
+
+ingress:
+  enabled: true
+  host: story.hzipyb.com
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"

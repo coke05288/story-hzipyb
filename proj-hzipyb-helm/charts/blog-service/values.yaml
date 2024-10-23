@@ -1,0 +1,2 @@
+image: nemomong/blog-service:latest
+port: 8081

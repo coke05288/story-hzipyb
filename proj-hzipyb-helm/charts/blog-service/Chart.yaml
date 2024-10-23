@@ -1,0 +1,4 @@
+apiVersion: v2
+name: blog-service
+description: Blog service for service blogging
+version: 1.0.0

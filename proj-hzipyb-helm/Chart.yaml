@@ -1,0 +1,14 @@
+apiVersion: v2
+name: proj-hzipyb-helm
+description: Helm chart for story.hzipyb.com architecture with Eureka, Gateway, and Blog services.
+version: 1.0.0
+dependencies:
+  - name: eureka-service
+    version: 1.0.0
+    repository: file://charts/eureka-service
+  - name: gateway-service
+    version: 1.0.0
+    repository: file://charts/gateway-service
+  - name: blog-service
+    version: 1.0.0
+    repository: file://charts/blog-service

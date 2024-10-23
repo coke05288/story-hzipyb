@@ -1,0 +1,4 @@
+rootProject.name = 'project-hzipyb'
+include 'eureka-service'
+include 'gateway-service'
+include 'blog-service'

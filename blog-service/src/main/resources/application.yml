@@ -1,0 +1,12 @@
+spring.application.name: blog-service
+
+spring:
+  profiles:
+    active: test
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
